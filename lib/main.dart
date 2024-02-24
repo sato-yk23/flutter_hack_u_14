@@ -73,6 +73,7 @@ class _ColorPickerPageState extends State<ColorPickerPage> {
     Color.fromRGBO(253, 238, 239, 1): '桜色',
     Color.fromRGBO(249, 193, 207, 1): 'ピンク',
     Color.fromRGBO(238, 145, 157, 1): 'ローズピンク',
+    Color.fromRGBO(255, 204, 204, 1): '桃色',
     Color.fromRGBO(191, 30, 51, 1): '赤',
     Color.fromRGBO(220, 35, 59, 1): '赤',
     Color.fromRGBO(110, 17, 29, 1): 'ボルドー',
@@ -86,6 +87,7 @@ class _ColorPickerPageState extends State<ColorPickerPage> {
     Color.fromRGBO(31, 47, 84, 1): 'ネイビー',
     Color.fromRGBO(255, 223, 128, 1): '淡黄',
     Color.fromRGBO(255, 190, 0, 1): '黄',
+    Colors.yellow: '黄',
     Color.fromRGBO(128, 95, 0, 1): '黄土色',
     Color.fromRGBO(231, 208, 169, 1): 'ベージュ', // ベージュ
     Color.fromRGBO(244, 224, 196, 1): 'ベージュ',
@@ -96,6 +98,7 @@ class _ColorPickerPageState extends State<ColorPickerPage> {
     Color.fromRGBO(37, 90, 52, 1): '深緑',
     Color.fromRGBO(116, 144, 93, 1): 'カーキー', // カーキー
     Color.fromRGBO(87, 97, 40, 1): 'オリーブグリーン',
+    Color.fromRGBO(0, 100, 0, 1): 'ダークグリーン',
     Color.fromRGBO(183, 168, 204, 1): 'ラベンダー',
     Color.fromRGBO(202, 164, 218, 1): '薄紫',
     Color.fromRGBO(162, 96, 191, 1): '紫',
@@ -132,6 +135,8 @@ class _ColorPickerPageState extends State<ColorPickerPage> {
     Color.fromRGBO(144, 238, 144, 1): 'ライトグリーン',
     Color.fromRGBO(65, 105, 225, 1): 'ロイヤルブルー',
     Color.fromRGBO(192, 192, 192, 1): 'シルバー',
+    Color.fromRGBO(206, 180, 230, 1): 'ライトパープル',
+    Color.fromRGBO(96, 15, 24, 1): 'ボルドー'
 
     // 他の色に対する名称も追加できます
   };
@@ -2157,54 +2162,60 @@ class Second2A extends StatelessWidget {
       differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
       differentColors.add(Color.fromRGBO(244, 224, 196, 1)); // ベージュ
     } else if (baseColor == Color.fromRGBO(110, 17, 29, 1)) {
+      differentColors.add(Color.fromRGBO(0, 0, 0, 1)); // 黒
+      differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
+      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ネイビー
+      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
+      differentColors.add(Color.fromRGBO(244, 224, 196, 1)); // ベージュ
     } else if (baseColor == Color.fromRGBO(0, 0, 0, 1)) {
-      differentColors.add(Color.fromRGBO(7, 71, 112, 1)); // デニム色（濃い）
-      differentColors.add(Colors.grey); // グレー
-      differentColors.add(Colors.black); // 黒
-      differentColors.add(Colors.white); // 白
-      differentColors.add(Color.fromRGBO(231, 208, 169, 1)); // ベージュ
-      differentColors.add(Color.fromRGBO(116, 144, 93, 1)); // カーキー
+      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
+      differentColors.add(Color.fromRGBO(128, 128, 128, 1)); // グレー
+      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ネイビー
+      differentColors.add(Color.fromRGBO(107, 142, 35, 1)); // オリーブグリーン
+      differentColors.add(Color.fromRGBO(186, 171, 135, 1)); // カーキ
     } else if (baseColor == Color.fromRGBO(191, 191, 191, 1) ||
         baseColor == Color.fromRGBO(128, 128, 128, 1) ||
         baseColor == Color.fromRGBO(64, 64, 64, 1)) {
-      differentColors.add(Color.fromRGBO(31, 47, 84, 1)); // ネイビー
-      differentColors.add(Color.fromRGBO(0, 0, 0, 1)); // 黒
-      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); //白
-      differentColors.add(Color.fromRGBO(87, 97, 40, 1)); // オリーブグリーン
+      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ネイビー
+      differentColors.add(Color.fromRGBO(96, 15, 24, 1)); // ボルドー
+      differentColors.add(Color.fromRGBO(116, 144, 93, 1)); // カーキ
+      differentColors.add(Color.fromRGBO(171, 225, 250, 1)); // ライトブルー
     } else if (baseColor == Color.fromRGBO(128, 95, 0, 1)) {
-      differentColors.add(Color.fromRGBO(255, 237, 179, 1)); // クリーム色
-      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ナビーブルー
-      differentColors.add(Colors.grey); // グレー
-      differentColors.add(Color.fromRGBO(87, 97, 40, 1)); // オリーブグリーン
+      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ネイビー
+      differentColors.add(Color.fromRGBO(96, 15, 24, 1)); // ボルドー
+      differentColors.add(Color.fromRGBO(116, 144, 93, 1)); // カーキ
+      differentColors.add(Color.fromRGBO(171, 225, 250, 1)); // ライトブルー
     } else if (baseColor == Color.fromRGBO(128, 196, 255, 1)) {
       differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
-      differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
-      differentColors.add(Colors.green); // 緑
+      differentColors.add(Color.fromRGBO(128, 128, 128, 1)); // グレー
+      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ナビー
       differentColors.add(Color.fromRGBO(255, 255, 224, 1)); // ライトイエロー
+      differentColors.add(Color.fromRGBO(144, 238, 144, 1)); // ライトグリーン
     } else if (baseColor == Color.fromRGBO(0, 137, 255, 1)) {
       differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
+      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ネイビー
+      differentColors.add(Color.fromRGBO(128, 128, 128, 1)); // グレー
       differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
-      differentColors.add(Colors.green); // 緑
-      differentColors.add(Color.fromRGBO(255, 255, 224, 1)); // ライトイエロー
+      differentColors.add(Color.fromRGBO(186, 171, 135, 1)); // カーキ
     } else if (baseColor == Color.fromRGBO(0, 68, 128, 1)) {
       differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
-      differentColors.add(Color.fromRGBO(171, 225, 250, 1)); // ライトブルー
       differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
-      differentColors.add(Color.fromRGBO(231, 208, 169, 1)); //be-jyu
-    } else if (baseColor == Color.fromRGBO(165, 218, 180, 1)) {
-      differentColors.add(Color.fromRGBO(37, 67, 182, 1)); // デニムブルー
-      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
-      differentColors.add(Color.fromRGBO(231, 208, 169, 1)); //be-jyu
-      differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
-    } else if (baseColor == Color.fromRGBO(75, 180, 104, 1)) {
-      differentColors.add(Color.fromRGBO(143, 100, 70, 1)); // ブラウン
       differentColors.add(Color.fromRGBO(244, 224, 196, 1)); // ベージュ
-      differentColors.add(Colors.grey); // グレー
+      differentColors.add(Color.fromRGBO(173, 216, 230, 1)); // ライトブルー
+      differentColors.add(Color.fromRGBO(0, 100, 0, 1)); // ダークグリーン
+    } else if (baseColor == Color.fromRGBO(165, 218, 180, 1)) {
+      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
+      differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
+      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ネイビー
+      differentColors.add(Color.fromRGBO(244, 224, 196, 1)); // ベージュ
+      differentColors.add(Color.fromRGBO(255, 255, 0, 1)); // イエロー
+    } else if (baseColor == Color.fromRGBO(75, 180, 104, 1)) {
+      differentColors.add(Color.fromRGBO(101, 67, 33, 1)); // ダークブラウン
+      differentColors.add(Color.fromRGBO(244, 224, 196, 1)); // ベージュ
+      differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
+      differentColors.add(Color.fromRGBO(186, 171, 135, 1)); // カーキ
+      differentColors.add(Color.fromRGBO(37, 67, 182, 1)); // デニムブルー
     } else if (baseColor == Color.fromRGBO(37, 90, 52, 1)) {
-      differentColors.add(Colors.grey); // グレー
-      differentColors.add(Color.fromRGBO(31, 47, 84, 1)); // ネイビー
-      differentColors.add(Color.fromRGBO(143, 100, 70, 1)); // ブラウン
-      differentColors.add(Color.fromRGBO(0, 0, 0, 1)); // 黒
     } else if (baseColor == Color.fromRGBO(255, 223, 128, 1)) {
       differentColors.add(Color.fromRGBO(135, 206, 235, 1)); // スカイブルー
       differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
@@ -2406,54 +2417,60 @@ class Second2B extends StatelessWidget {
       differentColors.add(Color.fromRGBO(107, 142, 35, 1)); // オリーブグリーン
       differentColors.add(Color.fromRGBO(240, 230, 140, 1)); // カーキ
     } else if (baseColor == Color.fromRGBO(110, 17, 29, 1)) {
+      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ネイビー
+      differentColors.add(Color.fromRGBO(92, 92, 92, 1)); // チャコールグレー
+      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
+      differentColors.add(Color.fromRGBO(107, 142, 35, 1)); // オリーブグリーン
+      differentColors.add(Color.fromRGBO(186, 171, 135, 1)); // カーキ
     } else if (baseColor == Color.fromRGBO(0, 0, 0, 1)) {
-      differentColors.add(Color.fromRGBO(7, 71, 112, 1)); // デニム色（濃い）
-      differentColors.add(Colors.grey); // グレー
-      differentColors.add(Colors.black); // 黒
-      differentColors.add(Colors.white); // 白
-      differentColors.add(Color.fromRGBO(231, 208, 169, 1)); // ベージュ
-      differentColors.add(Color.fromRGBO(116, 144, 93, 1)); // カーキー
+      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
+      differentColors.add(Color.fromRGBO(128, 128, 128, 1)); // グレー
+      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ネイビー
+      differentColors.add(Color.fromRGBO(107, 142, 35, 1)); // オリーブグリーン
+      differentColors.add(Color.fromRGBO(101, 67, 33, 1)); // ダークブラウン
     } else if (baseColor == Color.fromRGBO(191, 191, 191, 1) ||
         baseColor == Color.fromRGBO(128, 128, 128, 1) ||
         baseColor == Color.fromRGBO(64, 64, 64, 1)) {
-      differentColors.add(Color.fromRGBO(31, 47, 84, 1)); // ネイビー
-      differentColors.add(Color.fromRGBO(0, 0, 0, 1)); // 黒
-      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); //白
-      differentColors.add(Color.fromRGBO(87, 97, 40, 1)); // オリーブグリーン
+      differentColors.add(Color.fromRGBO(173, 216, 230, 1)); // ライトブルー
+      differentColors.add(Color.fromRGBO(144, 238, 144, 1)); // ライトグリーン
+      differentColors.add(Color.fromRGBO(255, 255, 224, 1)); // ライトイエロー
+      differentColors.add(Color.fromRGBO(206, 180, 230, 1)); // ライトパープル
     } else if (baseColor == Color.fromRGBO(128, 95, 0, 1)) {
-      differentColors.add(Color.fromRGBO(255, 237, 179, 1)); // クリーム色
-      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ナビーブルー
-      differentColors.add(Colors.grey); // グレー
-      differentColors.add(Color.fromRGBO(87, 97, 40, 1)); // オリーブグリーン
+      differentColors.add(Color.fromRGBO(173, 216, 230, 1)); // ライトブルー
+      differentColors.add(Color.fromRGBO(144, 238, 144, 1)); // ライトグリーン
+      differentColors.add(Color.fromRGBO(255, 255, 224, 1)); // ライトイエロー
+      differentColors.add(Color.fromRGBO(206, 180, 230, 1)); // ライトパープル
     } else if (baseColor == Color.fromRGBO(128, 196, 255, 1)) {
       differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
       differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
-      differentColors.add(Colors.green); // 緑
+      differentColors.add(Color.fromRGBO(173, 216, 230, 1)); // ライトブルー
       differentColors.add(Color.fromRGBO(255, 255, 224, 1)); // ライトイエロー
+      differentColors.add(Color.fromRGBO(144, 238, 144, 1)); // ライトグリーン
     } else if (baseColor == Color.fromRGBO(0, 137, 255, 1)) {
       differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
-      differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
-      differentColors.add(Colors.green); // 緑
+      differentColors.add(Color.fromRGBO(169, 169, 169, 1)); // ヘザーグレー
+      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ネイビー
+      differentColors.add(Color.fromRGBO(181, 101, 29, 1)); // ライトブラウン
       differentColors.add(Color.fromRGBO(255, 255, 224, 1)); // ライトイエロー
     } else if (baseColor == Color.fromRGBO(0, 68, 128, 1)) {
       differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
-      differentColors.add(Color.fromRGBO(171, 225, 250, 1)); // ライトブルー
-      differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
-      differentColors.add(Color.fromRGBO(231, 208, 169, 1)); //be-jyu
-    } else if (baseColor == Color.fromRGBO(165, 218, 180, 1)) {
+      differentColors.add(Color.fromRGBO(128, 128, 128, 1)); // グレー
       differentColors.add(Color.fromRGBO(37, 67, 182, 1)); // デニムブルー
-      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
-      differentColors.add(Color.fromRGBO(231, 208, 169, 1)); //be-jyu
-      differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
-    } else if (baseColor == Color.fromRGBO(75, 180, 104, 1)) {
-      differentColors.add(Color.fromRGBO(143, 100, 70, 1)); // ブラウン
+      differentColors.add(Color.fromRGBO(116, 144, 93, 1)); // カーキ
       differentColors.add(Color.fromRGBO(244, 224, 196, 1)); // ベージュ
-      differentColors.add(Colors.grey); // グレー
+    } else if (baseColor == Color.fromRGBO(165, 218, 180, 1)) {
+      differentColors.add(Color.fromRGBO(128, 128, 128, 1)); // グレー
+      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
+      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ネイビー
+      differentColors.add(Color.fromRGBO(186, 171, 135, 1)); // カーキ
+      differentColors.add(Color.fromRGBO(173, 216, 230, 1)); // ライトブルー
+    } else if (baseColor == Color.fromRGBO(75, 180, 104, 1)) {
+      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
+      differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
+      differentColors.add(Color.fromRGBO(101, 67, 33, 1)); // ダークブラウン
+      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ネイビー
+      differentColors.add(Color.fromRGBO(255, 255, 0, 1)); // イエロー
     } else if (baseColor == Color.fromRGBO(37, 90, 52, 1)) {
-      differentColors.add(Colors.grey); // グレー
-      differentColors.add(Color.fromRGBO(31, 47, 84, 1)); // ネイビー
-      differentColors.add(Color.fromRGBO(143, 100, 70, 1)); // ブラウン
-      differentColors.add(Color.fromRGBO(0, 0, 0, 1)); // 黒
     } else if (baseColor == Color.fromRGBO(255, 223, 128, 1)) {
       differentColors.add(Color.fromRGBO(135, 206, 235, 1)); // スカイブルー
       differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
@@ -2655,54 +2672,59 @@ class Second2C extends StatelessWidget {
       differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
       differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ネイビー
     } else if (baseColor == Color.fromRGBO(110, 17, 29, 1)) {
+      differentColors.add(Color.fromRGBO(0, 0, 0, 1)); // 黒
+      differentColors.add(Color.fromRGBO(191, 191, 191, 1)); // ライトグレー
+      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
+      differentColors.add(Color.fromRGBO(192, 192, 192, 1)); // シルバー
+      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ネイビー
     } else if (baseColor == Color.fromRGBO(0, 0, 0, 1)) {
-      differentColors.add(Color.fromRGBO(7, 71, 112, 1)); // デニム色（濃い）
-      differentColors.add(Colors.grey); // グレー
-      differentColors.add(Colors.black); // 黒
-      differentColors.add(Colors.white); // 白
-      differentColors.add(Color.fromRGBO(231, 208, 169, 1)); // ベージュ
-      differentColors.add(Color.fromRGBO(116, 144, 93, 1)); // カーキー
+      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
+      differentColors.add(Color.fromRGBO(191, 30, 51, 1)); // 赤
+      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ネイビー
+      differentColors.add(Color.fromRGBO(128, 128, 128, 1)); // グレー
+      differentColors.add(Color.fromRGBO(0, 128, 0, 1)); // グリーン
     } else if (baseColor == Color.fromRGBO(191, 191, 191, 1) ||
         baseColor == Color.fromRGBO(128, 128, 128, 1) ||
         baseColor == Color.fromRGBO(64, 64, 64, 1)) {
-      differentColors.add(Color.fromRGBO(31, 47, 84, 1)); // ネイビー
       differentColors.add(Color.fromRGBO(0, 0, 0, 1)); // 黒
-      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); //白
-      differentColors.add(Color.fromRGBO(87, 97, 40, 1)); // オリーブグリーン
+      differentColors.add(Color.fromRGBO(191, 30, 51, 1)); // 赤
+      differentColors.add(Color.fromRGBO(0, 0, 255, 1)); // 青
+      differentColors.add(Color.fromRGBO(0, 128, 0, 1)); // 緑
     } else if (baseColor == Color.fromRGBO(128, 95, 0, 1)) {
-      differentColors.add(Color.fromRGBO(255, 237, 179, 1)); // クリーム色
-      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ナビーブルー
-      differentColors.add(Colors.grey); // グレー
-      differentColors.add(Color.fromRGBO(87, 97, 40, 1)); // オリーブグリーン
+      differentColors.add(Color.fromRGBO(0, 0, 0, 1)); // 黒
+      differentColors.add(Color.fromRGBO(191, 30, 51, 1)); // 赤
+      differentColors.add(Color.fromRGBO(0, 0, 255, 1)); // 青
+      differentColors.add(Color.fromRGBO(0, 128, 0, 1)); // 緑
     } else if (baseColor == Color.fromRGBO(128, 196, 255, 1)) {
+      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ネイビーブルー
       differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
       differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
-      differentColors.add(Colors.green); // 緑
+      differentColors.add(Color.fromRGBO(0, 0, 0, 1)); // 黒
       differentColors.add(Color.fromRGBO(255, 255, 224, 1)); // ライトイエロー
     } else if (baseColor == Color.fromRGBO(0, 137, 255, 1)) {
       differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
-      differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
-      differentColors.add(Colors.green); // 緑
-      differentColors.add(Color.fromRGBO(255, 255, 224, 1)); // ライトイエロー
+      differentColors.add(Color.fromRGBO(128, 128, 128, 1)); // グレー
+      differentColors.add(Color.fromRGBO(0, 0, 0, 1)); // 黒
+      differentColors.add(Color.fromRGBO(191, 30, 51, 1)); // 赤
+      differentColors.add(Color.fromRGBO(255, 255, 0, 1)); // 黄色
     } else if (baseColor == Color.fromRGBO(0, 68, 128, 1)) {
       differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
-      differentColors.add(Color.fromRGBO(171, 225, 250, 1)); // ライトブルー
       differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
-      differentColors.add(Color.fromRGBO(231, 208, 169, 1)); //be-jyu
+      differentColors.add(Color.fromRGBO(191, 30, 51, 1)); // レッド
+      differentColors.add(Color.fromRGBO(255, 255, 0, 1)); // イエロー
+      differentColors.add(Color.fromRGBO(173, 216, 230, 1)); // ライトブルー
     } else if (baseColor == Color.fromRGBO(165, 218, 180, 1)) {
-      differentColors.add(Color.fromRGBO(37, 67, 182, 1)); // デニムブルー
       differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
-      differentColors.add(Color.fromRGBO(231, 208, 169, 1)); //be-jyu
-      differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
+      differentColors.add(Color.fromRGBO(0, 0, 0, 1)); // ブラック
+      differentColors.add(Color.fromRGBO(128, 128, 128, 1)); // グレー
+      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ネイビー
+      differentColors.add(Color.fromRGBO(0, 100, 0, 1)); // ダークグリーン
     } else if (baseColor == Color.fromRGBO(75, 180, 104, 1)) {
-      differentColors.add(Color.fromRGBO(143, 100, 70, 1)); // ブラウン
-      differentColors.add(Color.fromRGBO(244, 224, 196, 1)); // ベージュ
-      differentColors.add(Colors.grey); // グレー
-    } else if (baseColor == Color.fromRGBO(37, 90, 52, 1)) {
-      differentColors.add(Colors.grey); // グレー
-      differentColors.add(Color.fromRGBO(31, 47, 84, 1)); // ネイビー
-      differentColors.add(Color.fromRGBO(143, 100, 70, 1)); // ブラウン
       differentColors.add(Color.fromRGBO(0, 0, 0, 1)); // 黒
+      differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
+      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
+      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ネイビーブルー
+    } else if (baseColor == Color.fromRGBO(37, 90, 52, 1)) {
     } else if (baseColor == Color.fromRGBO(255, 223, 128, 1)) {
       differentColors.add(Color.fromRGBO(135, 206, 235, 1)); // スカイブルー
       differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
@@ -2903,49 +2925,53 @@ class Second2D extends StatelessWidget {
       differentColors.add(Color.fromRGBO(192, 192, 192, 1)); // シルバー
       differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ネイビー
     } else if (baseColor == Color.fromRGBO(110, 17, 29, 1)) {
+      differentColors.add(Color.fromRGBO(0, 0, 0, 1)); // 黒
+      differentColors.add(Color.fromRGBO(92, 92, 92, 1)); // チャコールグレー
+      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
+      differentColors.add(Color.fromRGBO(192, 192, 192, 1)); // シルバー
+      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ネイビー
     } else if (baseColor == Color.fromRGBO(0, 0, 0, 1)) {
-      differentColors.add(Color.fromRGBO(7, 71, 112, 1)); // デニム色（濃い）
-      differentColors.add(Colors.grey); // グレー
-      differentColors.add(Colors.black); // 黒
-      differentColors.add(Colors.white); // 白
-      differentColors.add(Color.fromRGBO(231, 208, 169, 1)); // ベージュ
-      differentColors.add(Color.fromRGBO(116, 144, 93, 1)); // カーキー
+      differentColors.add(Color.fromRGBO(192, 192, 192, 1)); // シルバー
+      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
+      differentColors.add(Color.fromRGBO(128, 128, 128, 1)); // グレー
+      differentColors.add(Color.fromRGBO(191, 30, 51, 1)); // レッド
+      differentColors.add(Color.fromRGBO(149, 73, 182, 1)); // 紫
     } else if (baseColor == Color.fromRGBO(191, 191, 191, 1) ||
         baseColor == Color.fromRGBO(128, 128, 128, 1) ||
         baseColor == Color.fromRGBO(64, 64, 64, 1)) {
-      differentColors.add(Color.fromRGBO(31, 47, 84, 1)); // ネイビー
       differentColors.add(Color.fromRGBO(0, 0, 0, 1)); // 黒
-      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); //白
-      differentColors.add(Color.fromRGBO(87, 97, 40, 1)); // オリーブグリーン
+      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
+      differentColors.add(Color.fromRGBO(192, 192, 192, 1)); // シルバー
+      differentColors.add(Color.fromRGBO(0, 0, 139, 1)); // ダークブルー
     } else if (baseColor == Color.fromRGBO(128, 95, 0, 1)) {
-      differentColors.add(Color.fromRGBO(255, 237, 179, 1)); // クリーム色
-      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ナビーブルー
-      differentColors.add(Colors.grey); // グレー
-      differentColors.add(Color.fromRGBO(87, 97, 40, 1)); // オリーブグリーン
+      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
+      differentColors.add(Color.fromRGBO(192, 192, 192, 1)); // シルバー
+      differentColors.add(Color.fromRGBO(0, 0, 139, 1)); // ダークブルー
     } else if (baseColor == Color.fromRGBO(128, 196, 255, 1)) {
       differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
       differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
-      differentColors.add(Colors.green); // 緑
-      differentColors.add(Color.fromRGBO(255, 255, 224, 1)); // ライトイエロー
+      differentColors.add(Color.fromRGBO(0, 0, 0, 1)); // 黒
+      differentColors.add(Color.fromRGBO(192, 192, 192, 1)); // シルバー
+      differentColors.add(Color.fromRGBO(0, 100, 0, 1)); // ダークグリーン
     } else if (baseColor == Color.fromRGBO(0, 137, 255, 1)) {
+      differentColors.add(Color.fromRGBO(0, 0, 0, 1)); // 黒
       differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
-      differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
-      differentColors.add(Colors.green); // 緑
-      differentColors.add(Color.fromRGBO(255, 255, 224, 1)); // ライトイエロー
+      differentColors.add(Color.fromRGBO(128, 128, 128, 1)); // グレー
+      differentColors.add(Color.fromRGBO(192, 192, 192, 1)); // シルバー
+      differentColors.add(Color.fromRGBO(0, 100, 0, 1)); // ダークグリーン
     } else if (baseColor == Color.fromRGBO(0, 68, 128, 1)) {
+      differentColors.add(Color.fromRGBO(0, 0, 0, 1)); // 黒
       differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
-      differentColors.add(Color.fromRGBO(171, 225, 250, 1)); // ライトブルー
-      differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
-      differentColors.add(Color.fromRGBO(231, 208, 169, 1)); //be-jyu
+      differentColors.add(Color.fromRGBO(128, 128, 128, 1)); // グレー
+      differentColors.add(Color.fromRGBO(192, 192, 192, 1)); // シルバー
+      differentColors.add(Color.fromRGBO(173, 216, 230, 1)); // ライトブルー
     } else if (baseColor == Color.fromRGBO(165, 218, 180, 1)) {
-      differentColors.add(Color.fromRGBO(37, 67, 182, 1)); // デニムブルー
       differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
-      differentColors.add(Color.fromRGBO(231, 208, 169, 1)); //be-jyu
-      differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
+      differentColors.add(Color.fromRGBO(0, 0, 0, 1)); // 黒
+      differentColors.add(Color.fromRGBO(128, 128, 128, 1)); // グレー
+      differentColors.add(Color.fromRGBO(192, 192, 192, 1)); // シルバー
+      differentColors.add(Color.fromRGBO(149, 73, 182, 1)); // 紫
     } else if (baseColor == Color.fromRGBO(75, 180, 104, 1)) {
-      differentColors.add(Color.fromRGBO(143, 100, 70, 1)); // ブラウン
-      differentColors.add(Color.fromRGBO(244, 224, 196, 1)); // ベージュ
-      differentColors.add(Colors.grey); // グレー
     } else if (baseColor == Color.fromRGBO(37, 90, 52, 1)) {
       differentColors.add(Colors.grey); // グレー
       differentColors.add(Color.fromRGBO(31, 47, 84, 1)); // ネイビー
@@ -3152,54 +3178,59 @@ class Second2E extends StatelessWidget {
       differentColors.add(Color.fromRGBO(244, 224, 196, 1)); // ベージュ
       differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
     } else if (baseColor == Color.fromRGBO(110, 17, 29, 1)) {
+      differentColors.add(Color.fromRGBO(186, 171, 135, 1)); // カーキ
+      differentColors.add(Color.fromRGBO(107, 142, 35, 1)); // オリーブグリーン
+      differentColors.add(Color.fromRGBO(244, 224, 196, 1)); // ベージュ
+      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
     } else if (baseColor == Color.fromRGBO(0, 0, 0, 1)) {
-      differentColors.add(Color.fromRGBO(7, 71, 112, 1)); // デニム色（濃い）
-      differentColors.add(Colors.grey); // グレー
-      differentColors.add(Colors.black); // 黒
-      differentColors.add(Colors.white); // 白
-      differentColors.add(Color.fromRGBO(231, 208, 169, 1)); // ベージュ
-      differentColors.add(Color.fromRGBO(116, 144, 93, 1)); // カーキー
+      differentColors.add(Color.fromRGBO(244, 224, 196, 1)); // ベージュ
+      differentColors.add(Color.fromRGBO(210, 180, 140, 1)); // タン
+      differentColors.add(Color.fromRGBO(107, 142, 35, 1)); // オリーブグリーン
+      differentColors.add(Color.fromRGBO(128, 128, 128, 1)); // グレー
+      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ネイビー
     } else if (baseColor == Color.fromRGBO(191, 191, 191, 1) ||
         baseColor == Color.fromRGBO(128, 128, 128, 1) ||
         baseColor == Color.fromRGBO(64, 64, 64, 1)) {
-      differentColors.add(Color.fromRGBO(31, 47, 84, 1)); // ネイビー
-      differentColors.add(Color.fromRGBO(0, 0, 0, 1)); // 黒
-      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); //白
-      differentColors.add(Color.fromRGBO(87, 97, 40, 1)); // オリーブグリーン
+      differentColors.add(Color.fromRGBO(244, 224, 196, 1)); // ベージュ
+      differentColors.add(Color.fromRGBO(165, 42, 42, 1)); // ブラウン
+      differentColors.add(Color.fromRGBO(0, 128, 0, 1)); // グリーン
+      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ネイビー
     } else if (baseColor == Color.fromRGBO(128, 95, 0, 1)) {
-      differentColors.add(Color.fromRGBO(255, 237, 179, 1)); // クリーム色
-      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ナビーブルー
-      differentColors.add(Colors.grey); // グレー
-      differentColors.add(Color.fromRGBO(87, 97, 40, 1)); // オリーブグリーン
+      differentColors.add(Color.fromRGBO(244, 224, 196, 1)); // ベージュ
+      differentColors.add(Color.fromRGBO(165, 42, 42, 1)); // ブラウン
+      differentColors.add(Color.fromRGBO(0, 128, 0, 1)); // グリーン
+      differentColors.add(Color.fromRGBO(0, 0, 128, 1)); // ネイビー
     } else if (baseColor == Color.fromRGBO(128, 196, 255, 1)) {
-      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
+      differentColors.add(Color.fromRGBO(244, 224, 196, 1)); // ベージュ
       differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
-      differentColors.add(Colors.green); // 緑
+      differentColors.add(Color.fromRGBO(181, 101, 29, 1)); // ライトブラウン
       differentColors.add(Color.fromRGBO(255, 255, 224, 1)); // ライトイエロー
+      differentColors.add(Color.fromRGBO(144, 238, 144, 1)); // ライトグリーン
     } else if (baseColor == Color.fromRGBO(0, 137, 255, 1)) {
-      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
+      differentColors.add(Color.fromRGBO(255, 237, 179, 1)); // クリーム色
+      differentColors.add(Color.fromRGBO(181, 101, 29, 1)); // ライトブラウン
+      differentColors.add(Color.fromRGBO(107, 142, 35, 1)); // オリーブグリーン
       differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
-      differentColors.add(Colors.green); // 緑
-      differentColors.add(Color.fromRGBO(255, 255, 224, 1)); // ライトイエロー
+      differentColors.add(Color.fromRGBO(244, 224, 196, 1)); // ベージュ
     } else if (baseColor == Color.fromRGBO(0, 68, 128, 1)) {
-      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
-      differentColors.add(Color.fromRGBO(171, 225, 250, 1)); // ライトブルー
-      differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
-      differentColors.add(Color.fromRGBO(231, 208, 169, 1)); //be-jyu
+      differentColors.add(Color.fromRGBO(194, 178, 128, 1)); // キャメル
+      differentColors.add(Color.fromRGBO(181, 101, 29, 1)); // ライトブラウン
+      differentColors.add(Color.fromRGBO(171, 154, 134, 1)); // グレージュ
+      differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // ホワイト
+      differentColors.add(Color.fromRGBO(107, 142, 35, 1)); // オリーブグリーン
     } else if (baseColor == Color.fromRGBO(165, 218, 180, 1)) {
-      differentColors.add(Color.fromRGBO(37, 67, 182, 1)); // デニムブルー
+      differentColors.add(Color.fromRGBO(244, 224, 196, 1)); // ベージュ
+      differentColors.add(Color.fromRGBO(194, 178, 128, 1)); // キャメル
       differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
-      differentColors.add(Color.fromRGBO(231, 208, 169, 1)); //be-jyu
+      differentColors.add(Color.fromRGBO(173, 216, 230, 1)); // ライトブルー
       differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
     } else if (baseColor == Color.fromRGBO(75, 180, 104, 1)) {
-      differentColors.add(Color.fromRGBO(143, 100, 70, 1)); // ブラウン
+      differentColors.add(Color.fromRGBO(165, 42, 42, 1)); // ブラウン
       differentColors.add(Color.fromRGBO(244, 224, 196, 1)); // ベージュ
-      differentColors.add(Colors.grey); // グレー
+      differentColors.add(Color.fromRGBO(211, 211, 211, 1)); // ライトグレー
+      differentColors.add(Color.fromRGBO(255, 165, 0, 1)); // オレンジ
+      differentColors.add(Color.fromRGBO(255, 255, 0, 1)); // イエロー
     } else if (baseColor == Color.fromRGBO(37, 90, 52, 1)) {
-      differentColors.add(Colors.grey); // グレー
-      differentColors.add(Color.fromRGBO(31, 47, 84, 1)); // ネイビー
-      differentColors.add(Color.fromRGBO(143, 100, 70, 1)); // ブラウン
-      differentColors.add(Color.fromRGBO(0, 0, 0, 1)); // 黒
     } else if (baseColor == Color.fromRGBO(255, 223, 128, 1)) {
       differentColors.add(Color.fromRGBO(135, 206, 235, 1)); // スカイブルー
       differentColors.add(Color.fromRGBO(255, 255, 255, 1)); // 白
